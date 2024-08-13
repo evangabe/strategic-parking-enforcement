@@ -1,7 +1,5 @@
-data/pickle/citations_v0_bronze.pickle
-data/pickle/citations_v0_clean.pickle
-data/pickle/timeseries.pickle
-data/geojson/parking_enforcement_districts.geojson
+data/pickle/
+data/geojson/
 
 venv/
 
