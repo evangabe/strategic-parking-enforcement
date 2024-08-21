@@ -56,7 +56,7 @@ class CNN_LSTM(nn.Module):
         self.fc1 = nn.Linear(n_nodes, n_nodes)
         self.fc2 = nn.Linear(n_nodes, 1)
         self.relu = nn.ReLU()
-        self.dropout = nn.Dropout(0.5) # for regularization
+        self.dropout = nn.Dropout(0.6) # for regularization
 
     def forward(self, x):
         batch_size, seq_len, step_len, _ = x.size()
@@ -101,14 +101,13 @@ class CNN_LSTM_Model:
         
         print("Loading completed. . .\n")
 
-
     def train_model(self):
         print("Starting model training. . .\n")
         self.model.train()
         n_epochs = self.config["n_epochs"]
 
         self.train_losses, self.test_losses = [], []
-        early_stopping_patience = 8
+        early_stopping_patience = 5
         best_val_loss = float('inf')
         epochs_without_improvement = 0
 
@@ -153,11 +152,11 @@ class CNN_LSTM_Model:
                     break
 
     def loss_plot(self):
-        n_epochs = self.config['n_epochs']
+        n_epochs = len(self.train_losses)
         # Plot the training and validation losses over epochs
         plt.figure(figsize=(10, 6))
         plt.plot(range(1, n_epochs+1), self.train_losses, color="blue", label='Training Loss')
-        plt.plot(range(1, n_epochs+1), self.test_losses, color="yellow", label='Validation Loss')
+        plt.plot(range(1, n_epochs+1), self.test_losses, color="orange", label='Validation Loss')
         plt.xlabel('Epochs')
         plt.ylabel('Loss')
         plt.title('Training and Validation Loss Over Epochs')

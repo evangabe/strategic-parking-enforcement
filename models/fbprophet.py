@@ -37,8 +37,10 @@ class FacebookProphet:
         plt.savefig('./images/prophet_forecast.png')
         plt.show()
     
-    def fit(self):
+    def fit(self, add_holidays = False):
         self.model = Prophet(growth='flat',daily_seasonality=True,weekly_seasonality=True)
+        if add_holidays:
+            self.model.add_country_holidays(country_name="US")
         self.model.fit(self.train)
 
     def measure(self):
