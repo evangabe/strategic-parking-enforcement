@@ -12,7 +12,7 @@ Since citation payment delinquincy rates have been shown to rise as a result of 
 
 ### Aim
 
-In this project, I will investigate whether timeseries forecasting on historical parking citation data can be leveraged to improve the accuracy of city budgeting and to offer insights to better optimize the deployment of PEOs for increased departmental efficiency.
+In this project, I will investigate whether timeseries forecasting on historical parking citation data can be leveraged to improve the accuracy of city budgeting and to offer insights to better optimize the deployment of PEOs for increased departmental efficiency. 
 
 
 ### Contents
